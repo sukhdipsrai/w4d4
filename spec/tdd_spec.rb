@@ -95,6 +95,7 @@ RSpec.describe Array do
 end
 
 describe "#stock_picker" do
+    
     context "argument is an array" do
         it "should raise an error if argument is not of Array class" do
             var = "stock"
