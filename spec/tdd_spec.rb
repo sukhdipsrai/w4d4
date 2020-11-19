@@ -95,13 +95,18 @@ RSpec.describe Array do
 end
 
 describe "#stock_picker" do
-   context "argument is an array" do
-    it "should raise an error if argument is not of Array class" do
-        var = "stock"
-        expect {stock_picker(var)}.to raise_error(ArgumentError) 
+    context "argument is an array" do
+        it "should raise an error if argument is not of Array class" do
+            var = "stock"
+            expect {stock_picker(var)}.to raise_error(ArgumentError) 
+        end
     end
-
-   end
-    
-
+    it "returns the right answer for case 1" do
+        arr = [1, 2, 4, 290, 760, 199, 65] #=> [0, 4]
+        expect(stock_picker(arr)).to eq([0, 4])
+    end
+    it "returns the right answer for case 2" do
+        arr_crash = [290, 760, 500, 65, 1, 2, 5,]
+        expect(stock_picker(arr_crash)).to eq([4, 6])
+    end
 end

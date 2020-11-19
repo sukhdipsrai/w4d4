@@ -34,4 +34,21 @@ end
 
 def stock_picker(arr)
     raise ArgumentError if !arr.is_a?(Array)
+    stock_max = 0
+    result = []
+
+    (0...arr.length).each do |i|
+        (i+1...arr.length).each do |j|
+            buy_sell = compare_stocks(arr[i], arr[j])
+            if buy_sell > stock_max
+                stock_max = buy_sell
+                result = [i, j]
+            end
+        end
+    end
+    result
+end
+
+def compare_stocks(num1, num2)
+    return num2/(num1.to_f)
 end
