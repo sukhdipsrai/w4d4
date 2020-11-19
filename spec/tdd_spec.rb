@@ -72,7 +72,7 @@ RSpec.describe Array do
                     [1, 4, 7],
                     [2, 5, 8]
                             ]}
-        context "does not modify self and returns a new array"
+        context "does not modify self and returns a new array" do
             it "does not modify the original array" do 
             arr = [-1, 0, 2, -2, 1]
             arr.my_transpose
@@ -85,10 +85,23 @@ RSpec.describe Array do
             expect(arr).not_to be(arr.my_transpose) 
             end 
         end
+        
         it "transposes original array" do 
-            expect(arr.my_transpose).to eq(my_transpose)
+            expect(arr.my_transpose).to eq(transposed)
         end
 
     end
+
+end
+
+describe "#stock_picker" do
+   context "argument is an array" do
+    it "should raise an error if argument is not of Array class" do
+        var = "stock"
+        expect {stock_picker(var)}.to raise_error(ArgumentError) 
+    end
+
+   end
+    
 
 end

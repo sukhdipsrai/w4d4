@@ -20,4 +20,18 @@ class Array
         pairs
     end
 
+    def my_transpose
+        ans = Array.new(length) { Array.new(length) }
+        (0...length).each do |i|
+            (0...length).each do |j|
+            ans[i][j] = self[j][i] 
+            end
+        end
+        ans
+    end
+    
+end
+
+def stock_picker(arr)
+    raise ArgumentError if !arr.is_a?(Array)
 end
